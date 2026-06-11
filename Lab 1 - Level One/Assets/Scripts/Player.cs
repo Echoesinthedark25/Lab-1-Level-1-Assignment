@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public float moveSpeed = 10f;
 
+    public WateringCanCollectable wateringCan;
+    public LevelExit levelExit;
+    public GameObject ExitFlag;
+
     public float jumpSpeed = 10f;
     public float maxJumpTime = 0.300f;
 
@@ -124,6 +128,11 @@ public class Player : MonoBehaviour
         }
 
         animator.SetBool("isGrounded", isGrounded);
+
+        if (wateringCan.NumberCollected >= 1)
+        {
+            ExitFlag.SetActive(true);
+        }
     }
 
 

@@ -1,12 +1,19 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class WateringCanCollectable : MonoBehaviour
 {
 
-    public static int NumberCollected = 0;
+    public int NumberCollected = 0;
 
-    public ButtonLoadScene buttonLoadScene;
+    public LevelExit levelExit;
+
+    public UnityEvent levelDone;
+
+    //public ButtonLoadScene buttonLoadScene;
+
+    //public GameObject UITrigger = GameObject.Find("EndLevelUI");
 
     private void OnTriggerEnter2D(Collider2D collider2d)
     {
@@ -21,12 +28,25 @@ public class WateringCanCollectable : MonoBehaviour
 
         }
 
-        if (NumberCollected >= 1)
+        //if (NumberCollected >= 1)
         {
-            Scene ButtonLoadScene = SceneManager.GetActiveScene();
+            
+            
+            
+            
+            //UITrigger.SetActive(true);
+            
+            
+            
+            //Scene ButtonLoadScene = SceneManager.GetActiveScene();
 
-            SceneManager.LoadScene(ButtonLoadScene.buildIndex);
+            //SceneManager.LoadScene(ButtonLoadScene.buildIndex);
         }
 
+    }
+
+    public void LevelDone()
+    {
+        levelDone.Invoke();
     }
 }

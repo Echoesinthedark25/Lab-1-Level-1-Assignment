@@ -4,9 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class ButtonLoadScene : MonoBehaviour
 {
-    public WateringCanCollectable wateringCanCollectable;
+    //public WateringCanCollectable wateringCanCollectable;
+    public LevelExit levelExit;
 
-    //public string sceneToLoad;
+    public string sceneToLoad;
 
     //public void LoadScene()
     //{
