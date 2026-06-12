@@ -1,3 +1,4 @@
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,7 @@ public class Enemy : MonoBehaviour
     public float patrolSpeedX = 3;
     public float chaseSpeedX = 7;
     public bool moveRight = true;
+    public Transform EnemyEye;
 
     public string sceneToLoad;
 
@@ -32,6 +34,10 @@ public class Enemy : MonoBehaviour
         }
         
         spriteRenderer.flipX = !moveRight;
+
+        //Vector3 pos = EnemyEye.localPosition;
+        //pos.x = -pos.x;
+        //EnemyEye.localPosition = pos;
 
     }
 
